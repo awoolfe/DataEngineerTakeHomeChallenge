@@ -1,5 +1,25 @@
 # Mistplay Data Engineer Take Home Challenge
 
+## Solution
+
+Python was chosen for this exercise because it is widely used for data processing and has powerful libraries to achieve this, such as pandas. Pandas was used to create a dataframe out of the data.json file which allowed for effective data manipulation.
+
+Most of the following requirements were achieved using built-in pandas functions, and some helper functions were created to flatten `widget_list` and create a table that gives, for each country in `location,` which `id`s are located in that country. A test file was created to test the functionality of these methods.
+
+The column `email` was anonymized by assigning a number to each unique email in the table and storing the email and its associated unique number in a dictionary. A function was applied to the column `email` to write each email as an anonymous number and create the `email_anon` column. To retrieve the email, the _obtain_original_email_ can be called with a given key and will return the email associated with this key.
+
+## Improvements
+
+The helper functions written often loop through the entire dataframe, which is inefficent, and use more space. There are built-in pandas functions that could be used instead that are more efficient (such as _pandas.DataFrame.explode_) and that should be explored given more time. As well, the function to flatten widget list is not very scalable because it relies on the column names staying the same as the original data.
+
+The solution to anonymize `email` could have used a bidirectional lookup structure as both key and value are unqiue. This would improve the speed of the solution.
+
+More tests could be written to increase the testing coverage.
+
+## How to run
+
+pip install -r requirements.txt
+python mistplay_data_processor
 
 ## Task Description
 
