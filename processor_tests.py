@@ -1,7 +1,5 @@
 import pandas as pd
 import mistplay_data_processor
-import pyarrow.parquet as pq
-import pyarrow as pa
 
 test_df = pd.read_json("test_data.json", lines=True)
 
@@ -18,7 +16,7 @@ def test_create_inverted_table(dataframe):
     assert dataframe.shape[1] == 9
     dataframe=mistplay_data_processor.create_inverted_table(dataframe, 'location', 'id')
     assert dataframe['Indonesia'].count() == 2
-    assert dataframe['Greece'].count() == 2
+    assert dataframe['Greece'].count() == 1
     print('Inverted table success!')
 
 
