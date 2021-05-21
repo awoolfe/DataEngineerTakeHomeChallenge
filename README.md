@@ -19,6 +19,7 @@ More tests could be written to increase the testing coverage.
 ## How to run
 
 `pip install -r requirements.txt`
+
 `python mistplay_data_processor`
 
 ## Task Description
